@@ -31,7 +31,7 @@ def create_jira_ticket(summary: str, description: str) -> str:
 
     json_body = {
         "fields": {
-            "project": {"key": "JS"},   # <-- change to your actual project key
+            "project": {"key": "project-key"},   # <-- change to your actual project key
             "summary": summary,
             "description": {
                 "type": "doc",
@@ -117,3 +117,4 @@ if user_input:
     with st.spinner("Processing..."):
         response = agent.run(user_input, callbacks=[st_callback])
         st.success(response)
+
